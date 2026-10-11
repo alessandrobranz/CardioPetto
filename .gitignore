@@ -1,0 +1,40 @@
+# Android / Gradle build outputs
+.gradle/
+.kotlin/
+**/build/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Local SDK and IDE configuration
+local.properties
+.idea/
+*.iml
+*.hprof
+captures/
+.DS_Store
+Thumbs.db
+
+# Signing keys and credentials
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+signing.properties
+secrets.properties
+.env
+.env.*
+!.env.example
+google-services.json
+
+# Recorded personal data and logs
+cardiopetto_*.csv
+*.log
