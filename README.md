@@ -30,3 +30,17 @@ Applicazione Android **Kotlin** per acquisire il giroscopio (o, in alternativa, 
 ## Stato
 
 **Codice sorgente prototipale, non compilato né testato su dispositivo in questo ambiente.** Miglioramenti successivi: timestamp binning robusto, fusione sensori, filtro adattivo, estrazione eventi cardiaci, scoring dell'artefatto, test unitari e validazione contro ECG.
+
+## APK debug da GitHub Actions
+
+Il workflow **Android Debug APK** compila automaticamente ogni push su `main` e ogni pull request verso `main`. Può anche essere avviato da **Actions → Android Debug APK → Run workflow**.
+
+1. Apri **Actions** nel repository.
+2. Apri una esecuzione completata con spunta verde.
+3. In **Artifacts**, scarica **CardioPetto-debug** (richiede accesso a GitHub).
+4. Estrai lo ZIP e apri **CardioPetto-debug.apk** sul telefono Android.
+
+L'archivio include il checksum SHA-256; resta disponibile per 30 giorni.
+La CI installa JDK 17 e Gradle 8.11.1 e compila con SDK 35 anche senza wrapper completo nel repository.
+L'APK usa la firma debug generata dal runner: tra build diverse potrebbe essere necessario disinstallare la versione precedente (perdendo i dati locali), perché la chiave può cambiare. Non è una release per Google Play.
+Una build riuscita verifica la compilazione, non l'accuratezza della stima cardiaca.
